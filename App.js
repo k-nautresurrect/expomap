@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  TouchableOpacity,
+  TouchableNativeFeedback, // only for android, works with view
   View,
   Image,
 } from "react-native";
@@ -19,19 +19,11 @@ export default function App() {
         displayed on the mobile device lets check. it is wrapped automatically
         Ok , fine.
       </Text>
-      <TouchableHighlight onPress={() => console.log("touched image")}>
-        <Image
-          // there are varius props
-          blurRadius={0}
-          fadeDuration={2000}
-          // resizeMode="stretch"
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableHighlight>
+      <TouchableNativeFeedback onPress={() => console.log("touched image")}>
+        <View
+          style={{ width: 200, height: 70, backgroundColor: "dodgerblue" }}
+        ></View>
+      </TouchableNativeFeedback>
       {/*
        * static image
        * can increase the size of bundle and ship it with the bundle.
