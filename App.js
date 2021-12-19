@@ -1,6 +1,12 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+  Image,
+} from "react-native";
 
 export default function App() {
   const handlePress = () => console.log("text clicked");
@@ -12,23 +18,25 @@ export default function App() {
         displayed on the mobile device lets check. it is wrapped automatically
         Ok , fine.
       </Text>
+      <TouchableWithoutFeedback onPress={() => console.log("touched image")}>
+        <Image
+          // there are varius props
+          blurRadius={1}
+          fadeDuration={2000}
+          // resizeMode="stretch"
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300",
+          }}
+        />
+      </TouchableWithoutFeedback>
       {/*
        * static image
        * can increase the size of bundle and ship it with the bundle.
        * the image from internet will not visible untill we specify
        * its dimensions and it is passed as an object.
        */}
-      <Image
-        // there are varius props
-        blurRadius={1}
-        fadeDuration={2000}
-        resizeMode="stretch"
-        source={{
-          width: 500,
-          height: 200,
-          uri: "https://picsum.photos/200/300",
-        }}
-      />
       <StatusBar style="auto" />
     </View>
   );
