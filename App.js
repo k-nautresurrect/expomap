@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>
+      <Text numberOfLines={1} onPress={() => console.log("text Clicked")}>
         hey this is a multiline text wiith some long text that may not be
         displayed on the mobile device lets check. it is wrapped automatically
         Ok , fine.
