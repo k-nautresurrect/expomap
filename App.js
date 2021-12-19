@@ -3,9 +3,6 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 
 export default function App() {
-  // returns a number that is refrence to the image
-  console.log(require("./assets/favicon.png"));
-
   const handlePress = () => console.log("text clicked");
 
   return (
@@ -18,8 +15,20 @@ export default function App() {
       {/*
        * static image
        * can increase the size of bundle and ship it with the bundle.
+       * the image from internet will not visible untill we specify
+       * its dimensions and it is passed as an object.
        */}
-      <Image source={require("./assets/favicon.png")} />
+      <Image
+        // there are varius props
+        blurRadius={1}
+        fadeDuration={2000}
+        resizeMode="stretch"
+        source={{
+          width: 500,
+          height: 200,
+          uri: "https://picsum.photos/200/300",
+        }}
+      />
       <StatusBar style="auto" />
     </View>
   );
