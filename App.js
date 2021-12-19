@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
+  TouchableOpacity,
   View,
   Image,
 } from "react-native";
@@ -18,7 +19,7 @@ export default function App() {
         displayed on the mobile device lets check. it is wrapped automatically
         Ok , fine.
       </Text>
-      <TouchableWithoutFeedback onPress={() => console.log("touched image")}>
+      <TouchableOpacity onPress={() => console.log("touched image")}>
         <Image
           // there are varius props
           blurRadius={1}
@@ -30,7 +31,7 @@ export default function App() {
             uri: "https://picsum.photos/200/300",
           }}
         />
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
       {/*
        * static image
        * can increase the size of bundle and ship it with the bundle.
