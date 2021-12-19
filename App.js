@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
-  TouchableWithoutFeedback,
+  TouchableHighlight,
   TouchableOpacity,
   View,
   Image,
@@ -19,10 +19,10 @@ export default function App() {
         displayed on the mobile device lets check. it is wrapped automatically
         Ok , fine.
       </Text>
-      <TouchableOpacity onPress={() => console.log("touched image")}>
+      <TouchableHighlight onPress={() => console.log("touched image")}>
         <Image
           // there are varius props
-          blurRadius={1}
+          blurRadius={0}
           fadeDuration={2000}
           // resizeMode="stretch"
           source={{
@@ -31,7 +31,7 @@ export default function App() {
             uri: "https://picsum.photos/200/300",
           }}
         />
-      </TouchableOpacity>
+      </TouchableHighlight>
       {/*
        * static image
        * can increase the size of bundle and ship it with the bundle.
